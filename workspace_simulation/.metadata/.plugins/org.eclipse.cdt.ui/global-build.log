@@ -1,0 +1,1127 @@
+14:56:50 **** Rebuild of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobotProxy.o" "..\\src\\RobotProxy.c" 
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Communication.o" "..\\src\\Communication.c" 
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Urlcode.o" "..\\src\\Urlcode.c" 
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+15:07:48 **** Rebuild of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Communication.o" "..\\src\\Communication.c" 
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Urlcode.o" "..\\src\\Urlcode.c" 
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobotProxy.o" "..\\src\\RobotProxy.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+Info: Nothing to build for simulation
+15:13:23 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c:2:21: warning: extra tokens at end of #include directive [enabled by default]
+ #include "stdbool.h";
+                     ^
+..\src\RobolabSimClient.c: In function 'main':
+..\src\RobolabSimClient.c:13:16: error: expected ':', ',', ';', '}' or '__attribute__' before '=' token
+   bool visited = false;
+                ^
+..\src\RobolabSimClient.c:18:25: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+  int currentCoord[] = (0,0);    // Die aktuelle Coordinate des aktuellen Punktes
+                         ^
+..\src\RobolabSimClient.c:18:2: error: invalid initializer
+  int currentCoord[] = (0,0);    // Die aktuelle Coordinate des aktuellen Punktes
+  ^
+..\src\RobolabSimClient.c: In function 'visitPoint':
+..\src\RobolabSimClient.c:24:38: warning: assignment makes integer from pointer without a cast [enabled by default]
+   allPoints[currentArrayPoint].edges = Robot_GetIntersections;
+                                      ^
+..\src\RobolabSimClient.c:25:31: error: 'point' has no member named 'visited'
+   allPoints[currentArrayPoint].visited = true;
+                               ^
+..\src\RobolabSimClient.c:25:3: warning: statement with no effect [-Wunused-value]
+   allPoints[currentArrayPoint].visited = true;
+   ^
+..\src\RobolabSimClient.c:27:3: warning: implicit declaration of function 'createPoints' [-Wimplicit-function-declaration]
+   createPoints(currentCoord[0] + 1,currentCoord[1]);
+   ^
+..\src\RobolabSimClient.c: In function 'pointExists':
+..\src\RobolabSimClient.c:38:3: error: 'for' loop initial declarations are only allowed in C99 mode
+   for ( int i = 0; i < currentArrayPoint + 1; i++ ){
+   ^
+..\src\RobolabSimClient.c:38:3: note: use option -std=c99 or -std=gnu99 to compile your code
+..\src\RobolabSimClient.c:39:4: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+    if ( coordToCheck[0] = allPoints[i].coord[0]){
+    ^
+..\src\RobolabSimClient.c:40:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     if ( coordToCheck[1] = allPoints[i].coord[1]){
+     ^
+..\src\RobolabSimClient.c: In function 'createPoints':
+..\src\RobolabSimClient.c:56:21: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+   short coord[] = (x, y);
+                     ^
+..\src\RobolabSimClient.c:56:3: error: invalid initializer
+   short coord[] = (x, y);
+   ^
+..\src\RobolabSimClient.c:58:4: warning: assignment of read-only location 'allPoints[currentArrayPoint + 1].coord' [enabled by default]
+    allPoints[currentArrayPoint + 1].coord = coord;
+    ^
+..\src\RobolabSimClient.c:58:43: error: incompatible types when assigning to type 'const short int[2]' from type 'short int *'
+    allPoints[currentArrayPoint + 1].coord = coord;
+                                           ^
+..\src\RobolabSimClient.c:58:4: warning: statement with no effect [-Wunused-value]
+    allPoints[currentArrayPoint + 1].coord = coord;
+    ^
+..\src\RobolabSimClient.c: In function 'setNull':
+..\src\RobolabSimClient.c:68:3: warning: implicit declaration of function 'Robot_move' [-Wimplicit-function-declaration]
+   Robot_move(0,0);
+   ^
+..\src\RobolabSimClient.c:69:20: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+   currentCoord = (0,0);
+                    ^
+..\src\RobolabSimClient.c:69:16: error: incompatible types when assigning to type 'int[1]' from type 'int'
+   currentCoord = (0,0);
+                ^
+..\src\RobolabSimClient.c:69:3: warning: statement with no effect [-Wunused-value]
+   currentCoord = (0,0);
+   ^
+..\src\RobolabSimClient.c: In function 'moveNorth':
+..\src\RobolabSimClient.c:84:35: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    currentCoord = (currentCoord[0], currentCoord[1] + 1);
+                                   ^
+..\src\RobolabSimClient.c:84:17: error: incompatible types when assigning to type 'int[1]' from type 'int'
+    currentCoord = (currentCoord[0], currentCoord[1] + 1);
+                 ^
+..\src\RobolabSimClient.c:84:4: warning: statement with no effect [-Wunused-value]
+    currentCoord = (currentCoord[0], currentCoord[1] + 1);
+    ^
+..\src\RobolabSimClient.c: In function 'moveEast':
+..\src\RobolabSimClient.c:95:39: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    currentCoord = (currentCoord[0] + 1, currentCoord[1]);
+                                       ^
+..\src\RobolabSimClient.c:95:17: error: incompatible types when assigning to type 'int[1]' from type 'int'
+    currentCoord = (currentCoord[0] + 1, currentCoord[1]);
+                 ^
+..\src\RobolabSimClient.c:95:4: warning: statement with no effect [-Wunused-value]
+    currentCoord = (currentCoord[0] + 1, currentCoord[1]);
+    ^
+..\src\RobolabSimClient.c: In function 'moveSouth':
+..\src\RobolabSimClient.c:106:35: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    currentCoord = (currentCoord[0], currentCoord[1] - 1);
+                                   ^
+..\src\RobolabSimClient.c:106:17: error: incompatible types when assigning to type 'int[1]' from type 'int'
+    currentCoord = (currentCoord[0], currentCoord[1] - 1);
+                 ^
+..\src\RobolabSimClient.c:106:4: warning: statement with no effect [-Wunused-value]
+    currentCoord = (currentCoord[0], currentCoord[1] - 1);
+    ^
+..\src\RobolabSimClient.c: In function 'moveWest':
+..\src\RobolabSimClient.c:117:39: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    currentCoord = (currentCoord[0] - 1, currentCoord[1]);
+                                       ^
+..\src\RobolabSimClient.c:117:17: error: incompatible types when assigning to type 'int[1]' from type 'int'
+    currentCoord = (currentCoord[0] - 1, currentCoord[1]);
+                 ^
+..\src\RobolabSimClient.c:117:4: warning: statement with no effect [-Wunused-value]
+    currentCoord = (currentCoord[0] - 1, currentCoord[1]);
+    ^
+15:14:22 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c:2:21: warning: extra tokens at end of #include directive [enabled by default]
+ #include "stdbool.h";
+                     ^
+..\src\RobolabSimClient.c: In function 'main':
+..\src\RobolabSimClient.c:13:16: error: expected ':', ',', ';', '}' or '__attribute__' before '=' token
+   bool visited = false;
+                ^
+..\src\RobolabSimClient.c:18:25: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+  int currentCoord[] = (0,0);    // Die aktuelle Coordinate des aktuellen Punktes
+                         ^
+..\src\RobolabSimClient.c:18:2: error: invalid initializer
+  int currentCoord[] = (0,0);    // Die aktuelle Coordinate des aktuellen Punktes
+  ^
+..\src\RobolabSimClient.c: In function 'visitPoint':
+..\src\RobolabSimClient.c:24:38: warning: assignment makes integer from pointer without a cast [enabled by default]
+   allPoints[currentArrayPoint].edges = Robot_GetIntersections;
+                                      ^
+..\src\RobolabSimClient.c:25:31: error: 'point' has no member named 'visited'
+   allPoints[currentArrayPoint].visited = true;
+                               ^
+..\src\RobolabSimClient.c:25:3: warning: statement with no effect [-Wunused-value]
+   allPoints[currentArrayPoint].visited = true;
+   ^
+..\src\RobolabSimClient.c:27:3: warning: implicit declaration of function 'createPoints' [-Wimplicit-function-declaration]
+   createPoints(currentCoord[0] + 1,currentCoord[1]);
+   ^
+..\src\RobolabSimClient.c: In function 'pointExists':
+..\src\RobolabSimClient.c:40:4: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+    if ( coordToCheck[0] = allPoints[i].coord[0]){
+    ^
+..\src\RobolabSimClient.c:41:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     if ( coordToCheck[1] = allPoints[i].coord[1]){
+     ^
+..\src\RobolabSimClient.c: In function 'createPoints':
+..\src\RobolabSimClient.c:57:21: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+   short coord[] = (x, y);
+                     ^
+..\src\RobolabSimClient.c:57:3: error: invalid initializer
+   short coord[] = (x, y);
+   ^
+..\src\RobolabSimClient.c:59:4: warning: assignment of read-only location 'allPoints[currentArrayPoint + 1].coord' [enabled by default]
+    allPoints[currentArrayPoint + 1].coord = coord;
+    ^
+..\src\RobolabSimClient.c:59:43: error: incompatible types when assigning to type 'const short int[2]' from type 'short int *'
+    allPoints[currentArrayPoint + 1].coord = coord;
+                                           ^
+..\src\RobolabSimClient.c:59:4: warning: statement with no effect [-Wunused-value]
+    allPoints[currentArrayPoint + 1].coord = coord;
+    ^
+..\src\RobolabSimClient.c: In function 'setNull':
+..\src\RobolabSimClient.c:69:3: warning: implicit declaration of function 'Robot_move' [-Wimplicit-function-declaration]
+   Robot_move(0,0);
+   ^
+..\src\RobolabSimClient.c:70:20: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+   currentCoord = (0,0);
+                    ^
+..\src\RobolabSimClient.c:70:16: error: incompatible types when assigning to type 'int[1]' from type 'int'
+   currentCoord = (0,0);
+                ^
+..\src\RobolabSimClient.c:70:3: warning: statement with no effect [-Wunused-value]
+   currentCoord = (0,0);
+   ^
+..\src\RobolabSimClient.c: In function 'moveNorth':
+..\src\RobolabSimClient.c:85:35: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    currentCoord = (currentCoord[0], currentCoord[1] + 1);
+                                   ^
+..\src\RobolabSimClient.c:85:17: error: incompatible types when assigning to type 'int[1]' from type 'int'
+    currentCoord = (currentCoord[0], currentCoord[1] + 1);
+                 ^
+..\src\RobolabSimClient.c:85:4: warning: statement with no effect [-Wunused-value]
+    currentCoord = (currentCoord[0], currentCoord[1] + 1);
+    ^
+..\src\RobolabSimClient.c: In function 'moveEast':
+..\src\RobolabSimClient.c:96:39: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    currentCoord = (currentCoord[0] + 1, currentCoord[1]);
+                                       ^
+..\src\RobolabSimClient.c:96:17: error: incompatible types when assigning to type 'int[1]' from type 'int'
+    currentCoord = (currentCoord[0] + 1, currentCoord[1]);
+                 ^
+..\src\RobolabSimClient.c:96:4: warning: statement with no effect [-Wunused-value]
+    currentCoord = (currentCoord[0] + 1, currentCoord[1]);
+    ^
+..\src\RobolabSimClient.c: In function 'moveSouth':
+..\src\RobolabSimClient.c:107:35: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    currentCoord = (currentCoord[0], currentCoord[1] - 1);
+                                   ^
+..\src\RobolabSimClient.c:107:17: error: incompatible types when assigning to type 'int[1]' from type 'int'
+    currentCoord = (currentCoord[0], currentCoord[1] - 1);
+                 ^
+..\src\RobolabSimClient.c:107:4: warning: statement with no effect [-Wunused-value]
+    currentCoord = (currentCoord[0], currentCoord[1] - 1);
+    ^
+..\src\RobolabSimClient.c: In function 'moveWest':
+..\src\RobolabSimClient.c:118:39: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    currentCoord = (currentCoord[0] - 1, currentCoord[1]);
+                                       ^
+..\src\RobolabSimClient.c:118:17: error: incompatible types when assigning to type 'int[1]' from type 'int'
+    currentCoord = (currentCoord[0] - 1, currentCoord[1]);
+                 ^
+..\src\RobolabSimClient.c:118:4: warning: statement with no effect [-Wunused-value]
+    currentCoord = (currentCoord[0] - 1, currentCoord[1]);
+    ^
+15:17:39 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c:2:21: warning: extra tokens at end of #include directive [enabled by default]
+ #include "stdbool.h";
+                     ^
+..\src\RobolabSimClient.c: In function 'main':
+..\src\RobolabSimClient.c:13:16: error: expected ':', ',', ';', '}' or '__attribute__' before '=' token
+   bool visited = false;
+                ^
+..\src\RobolabSimClient.c:18:25: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+  int currentCoord[] = (0,0);    // Die aktuelle Coordinate des aktuellen Punktes
+                         ^
+..\src\RobolabSimClient.c:18:2: error: invalid initializer
+  int currentCoord[] = (0,0);    // Die aktuelle Coordinate des aktuellen Punktes
+  ^
+..\src\RobolabSimClient.c: In function 'visitPoint':
+..\src\RobolabSimClient.c:24:38: warning: assignment makes integer from pointer without a cast [enabled by default]
+   allPoints[currentArrayPoint].edges = Robot_GetIntersections;
+                                      ^
+..\src\RobolabSimClient.c:25:31: error: 'point' has no member named 'visited'
+   allPoints[currentArrayPoint].visited = true;
+                               ^
+..\src\RobolabSimClient.c:25:3: warning: statement with no effect [-Wunused-value]
+   allPoints[currentArrayPoint].visited = true;
+   ^
+..\src\RobolabSimClient.c:27:3: warning: implicit declaration of function 'createPoints' [-Wimplicit-function-declaration]
+   createPoints(currentCoord[0] + 1,currentCoord[1]);
+   ^
+..\src\RobolabSimClient.c: In function 'pointExists':
+..\src\RobolabSimClient.c:40:4: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+    if ( coordToCheck[0] = allPoints[i].coord[0]){
+    ^
+..\src\RobolabSimClient.c:41:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     if ( coordToCheck[1] = allPoints[i].coord[1]){
+     ^
+..\src\RobolabSimClient.c: In function 'createPoints':
+..\src\RobolabSimClient.c:57:21: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+   short coord[] = (x, y);
+                     ^
+..\src\RobolabSimClient.c:57:3: error: invalid initializer
+   short coord[] = (x, y);
+   ^
+..\src\RobolabSimClient.c:59:4: warning: assignment of read-only location 'allPoints[currentArrayPoint + 1].coord' [enabled by default]
+    allPoints[currentArrayPoint + 1].coord = coord;
+    ^
+..\src\RobolabSimClient.c:59:43: error: incompatible types when assigning to type 'const short int[2]' from type 'short int *'
+    allPoints[currentArrayPoint + 1].coord = coord;
+                                           ^
+..\src\RobolabSimClient.c:59:4: warning: statement with no effect [-Wunused-value]
+    allPoints[currentArrayPoint + 1].coord = coord;
+    ^
+..\src\RobolabSimClient.c: In function 'setNull':
+..\src\RobolabSimClient.c:69:3: warning: implicit declaration of function 'Robot_move' [-Wimplicit-function-declaration]
+   Robot_move(0,0);
+   ^
+..\src\RobolabSimClient.c: In function 'moveNorth':
+..\src\RobolabSimClient.c:86:35: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    currentCoord = (currentCoord[0], currentCoord[1] + 1);
+                                   ^
+..\src\RobolabSimClient.c:86:17: error: incompatible types when assigning to type 'int[1]' from type 'int'
+    currentCoord = (currentCoord[0], currentCoord[1] + 1);
+                 ^
+..\src\RobolabSimClient.c:86:4: warning: statement with no effect [-Wunused-value]
+    currentCoord = (currentCoord[0], currentCoord[1] + 1);
+    ^
+..\src\RobolabSimClient.c: In function 'moveEast':
+..\src\RobolabSimClient.c:97:39: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    currentCoord = (currentCoord[0] + 1, currentCoord[1]);
+                                       ^
+..\src\RobolabSimClient.c:97:17: error: incompatible types when assigning to type 'int[1]' from type 'int'
+    currentCoord = (currentCoord[0] + 1, currentCoord[1]);
+                 ^
+..\src\RobolabSimClient.c:97:4: warning: statement with no effect [-Wunused-value]
+    currentCoord = (currentCoord[0] + 1, currentCoord[1]);
+    ^
+..\src\RobolabSimClient.c: In function 'moveSouth':
+..\src\RobolabSimClient.c:108:35: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    currentCoord = (currentCoord[0], currentCoord[1] - 1);
+                                   ^
+..\src\RobolabSimClient.c:108:17: error: incompatible types when assigning to type 'int[1]' from type 'int'
+    currentCoord = (currentCoord[0], currentCoord[1] - 1);
+                 ^
+..\src\RobolabSimClient.c:108:4: warning: statement with no effect [-Wunused-value]
+    currentCoord = (currentCoord[0], currentCoord[1] - 1);
+    ^
+..\src\RobolabSimClient.c: In function 'moveWest':
+..\src\RobolabSimClient.c:119:39: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    currentCoord = (currentCoord[0] - 1, currentCoord[1]);
+                                       ^
+..\src\RobolabSimClient.c:119:17: error: incompatible types when assigning to type 'int[1]' from type 'int'
+    currentCoord = (currentCoord[0] - 1, currentCoord[1]);
+                 ^
+..\src\RobolabSimClient.c:119:4: warning: statement with no effect [-Wunused-value]
+    currentCoord = (currentCoord[0] - 1, currentCoord[1]);
+    ^
+15:25:19 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c: In function 'main':
+..\src\RobolabSimClient.c:13:3: error: unknown type name 'boolean'
+   boolean visited = false;
+   ^
+..\src\RobolabSimClient.c:13:19: error: expected ':', ',', ';', '}' or '__attribute__' before '=' token
+   boolean visited = false;
+                   ^
+..\src\RobolabSimClient.c: In function 'visitPoint':
+..\src\RobolabSimClient.c:24:38: warning: assignment makes integer from pointer without a cast [enabled by default]
+   allPoints[currentArrayPoint].edges = Robot_GetIntersections;
+                                      ^
+..\src\RobolabSimClient.c:25:31: error: 'point' has no member named 'visited'
+   allPoints[currentArrayPoint].visited = true;
+                               ^
+..\src\RobolabSimClient.c:27:3: warning: implicit declaration of function 'createPoints' [-Wimplicit-function-declaration]
+   createPoints(currentCoord[0] + 1,currentCoord[1]);
+   ^
+..\src\RobolabSimClient.c: In function 'pointExists':
+..\src\RobolabSimClient.c:40:4: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+    if ( coordToCheck[0] = allPoints[i].coord[0]){
+    ^
+..\src\RobolabSimClient.c:41:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     if ( coordToCheck[1] = allPoints[i].coord[1]){
+     ^
+..\src\RobolabSimClient.c: In function 'createPoints':
+..\src\RobolabSimClient.c:57:21: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+   short coord[] = (x, y);
+                     ^
+..\src\RobolabSimClient.c:57:3: error: invalid initializer
+   short coord[] = (x, y);
+   ^
+..\src\RobolabSimClient.c:59:4: warning: assignment of read-only location 'allPoints[(int)currentArrayPoint + 1].coord' [enabled by default]
+    allPoints[currentArrayPoint + 1].coord = coord;
+    ^
+..\src\RobolabSimClient.c:59:43: error: incompatible types when assigning to type 'const short int[2]' from type 'short int *'
+    allPoints[currentArrayPoint + 1].coord = coord;
+                                           ^
+..\src\RobolabSimClient.c:59:4: warning: statement with no effect [-Wunused-value]
+    allPoints[currentArrayPoint + 1].coord = coord;
+    ^
+..\src\RobolabSimClient.c: In function 'setNull':
+..\src\RobolabSimClient.c:69:3: warning: implicit declaration of function 'Robot_move' [-Wimplicit-function-declaration]
+   Robot_move(0,0);
+   ^
+..\src\RobolabSimClient.c: In function 'moveNorth':
+..\src\RobolabSimClient.c:86:35: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    currentCoord = (currentCoord[0], currentCoord[1] + 1);
+                                   ^
+..\src\RobolabSimClient.c:86:17: error: incompatible types when assigning to type 'short int[2]' from type 'int'
+    currentCoord = (currentCoord[0], currentCoord[1] + 1);
+                 ^
+..\src\RobolabSimClient.c:86:4: warning: statement with no effect [-Wunused-value]
+    currentCoord = (currentCoord[0], currentCoord[1] + 1);
+    ^
+..\src\RobolabSimClient.c: In function 'moveEast':
+..\src\RobolabSimClient.c:97:39: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    currentCoord = (currentCoord[0] + 1, currentCoord[1]);
+                                       ^
+..\src\RobolabSimClient.c:97:17: error: incompatible types when assigning to type 'short int[2]' from type 'short int'
+    currentCoord = (currentCoord[0] + 1, currentCoord[1]);
+                 ^
+..\src\RobolabSimClient.c:97:4: warning: statement with no effect [-Wunused-value]
+    currentCoord = (currentCoord[0] + 1, currentCoord[1]);
+    ^
+..\src\RobolabSimClient.c: In function 'moveSouth':
+..\src\RobolabSimClient.c:108:35: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    currentCoord = (currentCoord[0], currentCoord[1] - 1);
+                                   ^
+..\src\RobolabSimClient.c:108:17: error: incompatible types when assigning to type 'short int[2]' from type 'int'
+    currentCoord = (currentCoord[0], currentCoord[1] - 1);
+                 ^
+..\src\RobolabSimClient.c:108:4: warning: statement with no effect [-Wunused-value]
+    currentCoord = (currentCoord[0], currentCoord[1] - 1);
+    ^
+..\src\RobolabSimClient.c: In function 'moveWest':
+..\src\RobolabSimClient.c:119:39: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    currentCoord = (currentCoord[0] - 1, currentCoord[1]);
+                                       ^
+..\src\RobolabSimClient.c:119:17: error: incompatible types when assigning to type 'short int[2]' from type 'short int'
+    currentCoord = (currentCoord[0] - 1, currentCoord[1]);
+                 ^
+..\src\RobolabSimClient.c:119:4: warning: statement with no effect [-Wunused-value]
+    currentCoord = (currentCoord[0] - 1, currentCoord[1]);
+    ^
+15:30:53 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c: In function 'main':
+..\src\RobolabSimClient.c:13:3: error: unknown type name 'boolean'
+   boolean visited = false;
+   ^
+..\src\RobolabSimClient.c:13:19: error: expected ':', ',', ';', '}' or '__attribute__' before '=' token
+   boolean visited = false;
+                   ^
+..\src\RobolabSimClient.c: In function 'visitPoint':
+..\src\RobolabSimClient.c:24:38: warning: assignment makes integer from pointer without a cast [enabled by default]
+   allPoints[currentArrayPoint].edges = Robot_GetIntersections;
+                                      ^
+..\src\RobolabSimClient.c:25:31: error: 'point' has no member named 'visited'
+   allPoints[currentArrayPoint].visited = true;
+                               ^
+..\src\RobolabSimClient.c:27:3: warning: implicit declaration of function 'createPoints' [-Wimplicit-function-declaration]
+   createPoints(currentCoord[0] + 1,currentCoord[1]);
+   ^
+..\src\RobolabSimClient.c: In function 'pointExists':
+..\src\RobolabSimClient.c:40:4: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+    if ( coordToCheck[0] = allPoints[i].coord[0]){
+    ^
+..\src\RobolabSimClient.c:41:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     if ( coordToCheck[1] = allPoints[i].coord[1]){
+     ^
+..\src\RobolabSimClient.c: In function 'createPoints':
+..\src\RobolabSimClient.c:59:43: error: incompatible types when assigning to type 'short int[2]' from type 'short int *'
+    allPoints[currentArrayPoint + 1].coord = coord;
+                                           ^
+..\src\RobolabSimClient.c: In function 'setNull':
+..\src\RobolabSimClient.c:69:3: warning: implicit declaration of function 'Robot_move' [-Wimplicit-function-declaration]
+   Robot_move(0,0);
+   ^
+..\src\RobolabSimClient.c: In function 'moveSouth':
+..\src\RobolabSimClient.c:108:35: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    currentCoord = (currentCoord[0], currentCoord[1] - 1);
+                                   ^
+..\src\RobolabSimClient.c:108:17: error: incompatible types when assigning to type 'short int[2]' from type 'int'
+    currentCoord = (currentCoord[0], currentCoord[1] - 1);
+                 ^
+..\src\RobolabSimClient.c: In function 'moveWest':
+..\src\RobolabSimClient.c:119:39: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    currentCoord = (currentCoord[0] - 1, currentCoord[1]);
+                                       ^
+..\src\RobolabSimClient.c:119:17: error: incompatible types when assigning to type 'short int[2]' from type 'short int'
+    currentCoord = (currentCoord[0] - 1, currentCoord[1]);
+                 ^
+16:05:04 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c: In function 'main':
+..\src\RobolabSimClient.c:20:17: error: expected expression before '{' token
+  allPoints[0] = {{0,0}, Robot_GetIntersections, true};
+                 ^
+..\src\RobolabSimClient.c: In function 'visitPoint':
+..\src\RobolabSimClient.c:28:3: warning: implicit declaration of function 'getArrayAddressFromCoord' [-Wimplicit-function-declaration]
+   int i = getArrayAddressFromCoord(currentCoord);
+   ^
+..\src\RobolabSimClient.c:30:22: warning: assignment makes integer from pointer without a cast [enabled by default]
+   allPoints[i].edges = Robot_GetIntersections;
+                      ^
+..\src\RobolabSimClient.c:33:3: warning: implicit declaration of function 'createPoints' [-Wimplicit-function-declaration]
+   createPoints(currentCoord[0] + 1,currentCoord[1]);
+   ^
+..\src\RobolabSimClient.c: In function 'createPoints':
+..\src\RobolabSimClient.c:65:43: error: incompatible types when assigning to type 'short int[2]' from type 'short int *'
+    allPoints[currentArrayPoint + 1].coord = coord;
+                                           ^
+..\src\RobolabSimClient.c: In function 'main':
+..\src\RobolabSimClient.c:74:40: error: expected ';', ',' or ')' before 'coordToCheck'
+  int getArrayAddressFromCoord(short[2] coordToCheck){
+                                        ^
+..\src\RobolabSimClient.c: In function 'setNull':
+..\src\RobolabSimClient.c:93:3: warning: implicit declaration of function 'Robot_move' [-Wimplicit-function-declaration]
+   Robot_move(0,0);
+   ^
+16:05:21 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c: In function 'main':
+..\src\RobolabSimClient.c:20:17: error: expected expression before '{' token
+  allPoints[0] = {{0,0}, Robot_GetIntersections, 1};
+                 ^
+..\src\RobolabSimClient.c: In function 'visitPoint':
+..\src\RobolabSimClient.c:28:3: warning: implicit declaration of function 'getArrayAddressFromCoord' [-Wimplicit-function-declaration]
+   int i = getArrayAddressFromCoord(currentCoord);
+   ^
+..\src\RobolabSimClient.c:30:22: warning: assignment makes integer from pointer without a cast [enabled by default]
+   allPoints[i].edges = Robot_GetIntersections;
+                      ^
+..\src\RobolabSimClient.c:33:3: warning: implicit declaration of function 'createPoints' [-Wimplicit-function-declaration]
+   createPoints(currentCoord[0] + 1,currentCoord[1]);
+   ^
+..\src\RobolabSimClient.c: In function 'createPoints':
+..\src\RobolabSimClient.c:65:43: error: incompatible types when assigning to type 'short int[2]' from type 'short int *'
+    allPoints[currentArrayPoint + 1].coord = coord;
+                                           ^
+..\src\RobolabSimClient.c: In function 'main':
+..\src\RobolabSimClient.c:74:40: error: expected ';', ',' or ')' before 'coordToCheck'
+  int getArrayAddressFromCoord(short[2] coordToCheck){
+                                        ^
+..\src\RobolabSimClient.c: In function 'setNull':
+..\src\RobolabSimClient.c:93:3: warning: implicit declaration of function 'Robot_move' [-Wimplicit-function-declaration]
+   Robot_move(0,0);
+   ^
+16:05:57 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c: In function 'main':
+..\src\RobolabSimClient.c:20:17: error: expected expression before '{' token
+  allPoints[0] = {{0,0}, Robot_GetIntersections, 1};
+                 ^
+..\src\RobolabSimClient.c: In function 'visitPoint':
+..\src\RobolabSimClient.c:28:3: warning: implicit declaration of function 'getArrayAddressFromCoord' [-Wimplicit-function-declaration]
+   int i = getArrayAddressFromCoord(currentCoord);
+   ^
+..\src\RobolabSimClient.c:30:22: warning: assignment makes integer from pointer without a cast [enabled by default]
+   allPoints[i].edges = Robot_GetIntersections;
+                      ^
+..\src\RobolabSimClient.c:33:3: warning: implicit declaration of function 'createPoints' [-Wimplicit-function-declaration]
+   createPoints(currentCoord[0] + 1,currentCoord[1]);
+   ^
+..\src\RobolabSimClient.c: In function 'createPoints':
+..\src\RobolabSimClient.c:65:43: error: incompatible types when assigning to type 'short int[2]' from type 'short int *'
+    allPoints[currentArrayPoint + 1].coord = coord;
+                                           ^
+..\src\RobolabSimClient.c: In function 'main':
+..\src\RobolabSimClient.c:74:40: error: expected ';', ',' or ')' before 'coordToCheck'
+  int getArrayAddressFromCoord(short[2] coordToCheck){
+                                        ^
+..\src\RobolabSimClient.c: In function 'setNull':
+..\src\RobolabSimClient.c:93:3: warning: implicit declaration of function 'Robot_move' [-Wimplicit-function-declaration]
+   Robot_move(0,0);
+   ^
+16:07:06 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c: In function 'main':
+..\src\RobolabSimClient.c:20:17: error: expected expression before '{' token
+  allPoints[0] = {{0,0}, Robot_GetIntersections, 1};
+                 ^
+..\src\RobolabSimClient.c: In function 'visitPoint':
+..\src\RobolabSimClient.c:28:3: warning: implicit declaration of function 'getArrayAddressFromCoord' [-Wimplicit-function-declaration]
+   int i = getArrayAddressFromCoord(currentCoord);
+   ^
+..\src\RobolabSimClient.c:30:22: warning: assignment makes integer from pointer without a cast [enabled by default]
+   allPoints[i].edges = Robot_GetIntersections;
+                      ^
+..\src\RobolabSimClient.c:33:3: warning: implicit declaration of function 'createPoints' [-Wimplicit-function-declaration]
+   createPoints(currentCoord[0] + 1,currentCoord[1]);
+   ^
+..\src\RobolabSimClient.c: In function 'createPoints':
+..\src\RobolabSimClient.c:65:43: error: incompatible types when assigning to type 'short int[2]' from type 'short int *'
+    allPoints[currentArrayPoint + 1].coord = coord;
+                                           ^
+..\src\RobolabSimClient.c: In function 'main':
+..\src\RobolabSimClient.c:74:40: error: expected ';', ',' or ')' before 'coordToCheck'
+  int getArrayAddressFromCoord(short[2] coordToCheck){
+                                        ^
+..\src\RobolabSimClient.c: In function 'setNull':
+..\src\RobolabSimClient.c:93:3: warning: implicit declaration of function 'Robot_move' [-Wimplicit-function-declaration]
+   Robot_move(0,0);
+   ^
+16:07:54 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c: In function 'main':
+..\src\RobolabSimClient.c:21:11: error: expected expression before '{' token
+  ja.coord={0,0};
+           ^
+..\src\RobolabSimClient.c: In function 'visitPoint':
+..\src\RobolabSimClient.c:30:3: warning: implicit declaration of function 'getArrayAddressFromCoord' [-Wimplicit-function-declaration]
+   int i = getArrayAddressFromCoord(currentCoord);
+   ^
+..\src\RobolabSimClient.c:32:22: warning: assignment makes integer from pointer without a cast [enabled by default]
+   allPoints[i].edges = Robot_GetIntersections;
+                      ^
+..\src\RobolabSimClient.c:35:3: warning: implicit declaration of function 'createPoints' [-Wimplicit-function-declaration]
+   createPoints(currentCoord[0] + 1,currentCoord[1]);
+   ^
+..\src\RobolabSimClient.c: In function 'createPoints':
+..\src\RobolabSimClient.c:67:43: error: incompatible types when assigning to type 'short int[2]' from type 'short int *'
+    allPoints[currentArrayPoint + 1].coord = coord;
+                                           ^
+..\src\RobolabSimClient.c: In function 'main':
+..\src\RobolabSimClient.c:76:40: error: expected ';', ',' or ')' before 'coordToCheck'
+  int getArrayAddressFromCoord(short[2] coordToCheck){
+                                        ^
+..\src\RobolabSimClient.c: In function 'setNull':
+..\src\RobolabSimClient.c:95:3: warning: implicit declaration of function 'Robot_move' [-Wimplicit-function-declaration]
+   Robot_move(0,0);
+   ^
+16:09:10 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c: In function 'main':
+..\src\RobolabSimClient.c:21:12: error: expected expression before '{' token
+  ja.coord= {0,0};
+            ^
+..\src\RobolabSimClient.c:22:11: warning: assignment makes integer from pointer without a cast [enabled by default]
+  ja.edges = Robot_GetIntersections;
+           ^
+..\src\RobolabSimClient.c: In function 'visitPoint':
+..\src\RobolabSimClient.c:32:3: warning: implicit declaration of function 'getArrayAddressFromCoord' [-Wimplicit-function-declaration]
+   int i = getArrayAddressFromCoord(currentCoord);
+   ^
+..\src\RobolabSimClient.c:34:22: warning: assignment makes integer from pointer without a cast [enabled by default]
+   allPoints[i].edges = Robot_GetIntersections;
+                      ^
+..\src\RobolabSimClient.c:37:3: warning: implicit declaration of function 'createPoints' [-Wimplicit-function-declaration]
+   createPoints(currentCoord[0] + 1,currentCoord[1]);
+   ^
+..\src\RobolabSimClient.c: In function 'createPoints':
+..\src\RobolabSimClient.c:69:43: error: incompatible types when assigning to type 'int[2]' from type 'short int *'
+    allPoints[currentArrayPoint + 1].coord = coord;
+                                           ^
+..\src\RobolabSimClient.c: In function 'main':
+..\src\RobolabSimClient.c:78:40: error: expected ';', ',' or ')' before 'coordToCheck'
+  int getArrayAddressFromCoord(short[2] coordToCheck){
+                                        ^
+..\src\RobolabSimClient.c: In function 'setNull':
+..\src\RobolabSimClient.c:97:3: warning: implicit declaration of function 'Robot_move' [-Wimplicit-function-declaration]
+   Robot_move(0,0);
+   ^
+16:09:16 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c: In function 'main':
+..\src\RobolabSimClient.c:21:12: error: expected expression before '{' token
+  ja.coord= {0,0};
+            ^
+..\src\RobolabSimClient.c:22:11: warning: assignment makes integer from pointer without a cast [enabled by default]
+  ja.edges = Robot_GetIntersections;
+           ^
+..\src\RobolabSimClient.c: In function 'visitPoint':
+..\src\RobolabSimClient.c:32:3: warning: implicit declaration of function 'getArrayAddressFromCoord' [-Wimplicit-function-declaration]
+   int i = getArrayAddressFromCoord(currentCoord);
+   ^
+..\src\RobolabSimClient.c:34:22: warning: assignment makes integer from pointer without a cast [enabled by default]
+   allPoints[i].edges = Robot_GetIntersections;
+                      ^
+..\src\RobolabSimClient.c:37:3: warning: implicit declaration of function 'createPoints' [-Wimplicit-function-declaration]
+   createPoints(currentCoord[0] + 1,currentCoord[1]);
+   ^
+..\src\RobolabSimClient.c: In function 'createPoints':
+..\src\RobolabSimClient.c:69:43: error: incompatible types when assigning to type 'short int[2]' from type 'short int *'
+    allPoints[currentArrayPoint + 1].coord = coord;
+                                           ^
+..\src\RobolabSimClient.c: In function 'main':
+..\src\RobolabSimClient.c:78:40: error: expected ';', ',' or ')' before 'coordToCheck'
+  int getArrayAddressFromCoord(short[2] coordToCheck){
+                                        ^
+..\src\RobolabSimClient.c: In function 'setNull':
+..\src\RobolabSimClient.c:97:3: warning: implicit declaration of function 'Robot_move' [-Wimplicit-function-declaration]
+   Robot_move(0,0);
+   ^
+16:10:16 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c: In function 'main':
+..\src\RobolabSimClient.c:23:11: warning: assignment makes integer from pointer without a cast [enabled by default]
+  ja.edges = Robot_GetIntersections;
+           ^
+..\src\RobolabSimClient.c: In function 'visitPoint':
+..\src\RobolabSimClient.c:33:3: warning: implicit declaration of function 'getArrayAddressFromCoord' [-Wimplicit-function-declaration]
+   int i = getArrayAddressFromCoord(currentCoord);
+   ^
+..\src\RobolabSimClient.c:35:22: warning: assignment makes integer from pointer without a cast [enabled by default]
+   allPoints[i].edges = Robot_GetIntersections;
+                      ^
+..\src\RobolabSimClient.c:38:3: warning: implicit declaration of function 'createPoints' [-Wimplicit-function-declaration]
+   createPoints(currentCoord[0] + 1,currentCoord[1]);
+   ^
+..\src\RobolabSimClient.c: In function 'createPoints':
+..\src\RobolabSimClient.c:70:43: error: incompatible types when assigning to type 'short int[2]' from type 'short int *'
+    allPoints[currentArrayPoint + 1].coord = coord;
+                                           ^
+..\src\RobolabSimClient.c: In function 'main':
+..\src\RobolabSimClient.c:79:40: error: expected ';', ',' or ')' before 'coordToCheck'
+  int getArrayAddressFromCoord(short[2] coordToCheck){
+                                        ^
+..\src\RobolabSimClient.c: In function 'setNull':
+..\src\RobolabSimClient.c:98:3: warning: implicit declaration of function 'Robot_move' [-Wimplicit-function-declaration]
+   Robot_move(0,0);
+   ^
+16:12:57 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c: In function 'visitPoint':
+..\src\RobolabSimClient.c:33:3: warning: implicit declaration of function 'getArrayAddressFromCoord' [-Wimplicit-function-declaration]
+   int i = getArrayAddressFromCoord(currentCoord);
+   ^
+..\src\RobolabSimClient.c:38:3: warning: implicit declaration of function 'createPoints' [-Wimplicit-function-declaration]
+   createPoints(currentCoord[0] + 1,currentCoord[1]);
+   ^
+..\src\RobolabSimClient.c: In function 'createPoints':
+..\src\RobolabSimClient.c:70:43: error: incompatible types when assigning to type 'short int[2]' from type 'short int *'
+    allPoints[currentArrayPoint + 1].coord = coord;
+                                           ^
+..\src\RobolabSimClient.c: In function 'setNull':
+..\src\RobolabSimClient.c:98:3: warning: implicit declaration of function 'Robot_move' [-Wimplicit-function-declaration]
+   Robot_move(0,0);
+   ^
+16:14:34 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c: In function 'visitPoint':
+..\src\RobolabSimClient.c:33:3: warning: implicit declaration of function 'getArrayAddressFromCoord' [-Wimplicit-function-declaration]
+   int i = getArrayAddressFromCoord(currentCoord);
+   ^
+..\src\RobolabSimClient.c:38:3: warning: implicit declaration of function 'createPoints' [-Wimplicit-function-declaration]
+   createPoints(currentCoord[0] + 1,currentCoord[1]);
+   ^
+..\src\RobolabSimClient.c: In function 'createPoints':
+..\src\RobolabSimClient.c:70:43: error: incompatible types when assigning to type 'short int[2]' from type 'short int *'
+    allPoints[currentArrayPoint + 1].coord = coord2;
+                                           ^
+..\src\RobolabSimClient.c: In function 'setNull':
+..\src\RobolabSimClient.c:98:3: warning: implicit declaration of function 'Robot_move' [-Wimplicit-function-declaration]
+   Robot_move(0,0);
+   ^
+18:24:06 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c: In function 'main':
+..\src\RobolabSimClient.c:23:2: error: 'for' loop initial declarations are only allowed in C99 mode
+  for ( int i = 0; i < 76; i++ ){
+  ^
+..\src\RobolabSimClient.c:23:2: note: use option -std=c99 or -std=gnu99 to compile your code
+..\src\RobolabSimClient.c:28:2: error: expected ';' before '}' token
+  }
+  ^
+..\src\RobolabSimClient.c: In function 'visitPoint':
+..\src\RobolabSimClient.c:36:3: warning: implicit declaration of function 'getArrayAddressFromCoord' [-Wimplicit-function-declaration]
+   int i = getArrayAddressFromCoord(currentCoord);
+   ^
+..\src\RobolabSimClient.c:41:3: warning: implicit declaration of function 'createPoints' [-Wimplicit-function-declaration]
+   createPoints(currentCoord[0] + 1,currentCoord[1]);
+   ^
+..\src\RobolabSimClient.c: In function 'setNull':
+..\src\RobolabSimClient.c:102:3: warning: implicit declaration of function 'Robot_move' [-Wimplicit-function-declaration]
+   Robot_move(0,0);
+   ^
+18:25:26 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c: In function 'main':
+..\src\RobolabSimClient.c:24:26: error: 'i' undeclared (first use in this function)
+  for ( pointsfiller = 0; i < 76; i++ ){
+                          ^
+..\src\RobolabSimClient.c:24:26: note: each undeclared identifier is reported only once for each function it appears in
+..\src\RobolabSimClient.c:29:2: error: expected ';' before '}' token
+  }
+  ^
+..\src\RobolabSimClient.c: In function 'visitPoint':
+..\src\RobolabSimClient.c:37:3: warning: implicit declaration of function 'getArrayAddressFromCoord' [-Wimplicit-function-declaration]
+   int i = getArrayAddressFromCoord(currentCoord);
+   ^
+..\src\RobolabSimClient.c:42:3: warning: implicit declaration of function 'createPoints' [-Wimplicit-function-declaration]
+   createPoints(currentCoord[0] + 1,currentCoord[1]);
+   ^
+..\src\RobolabSimClient.c: In function 'setNull':
+..\src\RobolabSimClient.c:103:3: warning: implicit declaration of function 'Robot_move' [-Wimplicit-function-declaration]
+   Robot_move(0,0);
+   ^
+18:25:43 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c: In function 'main':
+..\src\RobolabSimClient.c:29:2: error: expected ';' before '}' token
+  }
+  ^
+..\src\RobolabSimClient.c: In function 'visitPoint':
+..\src\RobolabSimClient.c:37:3: warning: implicit declaration of function 'getArrayAddressFromCoord' [-Wimplicit-function-declaration]
+   int i = getArrayAddressFromCoord(currentCoord);
+   ^
+..\src\RobolabSimClient.c:42:3: warning: implicit declaration of function 'createPoints' [-Wimplicit-function-declaration]
+   createPoints(currentCoord[0] + 1,currentCoord[1]);
+   ^
+..\src\RobolabSimClient.c: In function 'setNull':
+..\src\RobolabSimClient.c:103:3: warning: implicit declaration of function 'Robot_move' [-Wimplicit-function-declaration]
+   Robot_move(0,0);
+   ^
+18:25:58 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c: In function 'visitPoint':
+..\src\RobolabSimClient.c:37:3: warning: implicit declaration of function 'getArrayAddressFromCoord' [-Wimplicit-function-declaration]
+   int i = getArrayAddressFromCoord(currentCoord);
+   ^
+..\src\RobolabSimClient.c:42:3: warning: implicit declaration of function 'createPoints' [-Wimplicit-function-declaration]
+   createPoints(currentCoord[0] + 1,currentCoord[1]);
+   ^
+..\src\RobolabSimClient.c: In function 'setNull':
+..\src\RobolabSimClient.c:103:3: warning: implicit declaration of function 'Robot_move' [-Wimplicit-function-declaration]
+   Robot_move(0,0);
+   ^
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+18:28:58 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c: In function 'main':
+..\src\RobolabSimClient.c:41:7: error: static declaration of 'visitPoint' follows non-static declaration
+  void visitPoint(){
+       ^
+..\src\RobolabSimClient.c:5:7: note: previous declaration of 'visitPoint' was here
+  void visitPoint();
+       ^
+..\src\RobolabSimClient.c:59:6: error: static declaration of 'pointExists' follows non-static declaration
+  int pointExists(short coordToCheck[2]){
+      ^
+..\src\RobolabSimClient.c:6:6: note: previous declaration of 'pointExists' was here
+  int pointExists();
+      ^
+..\src\RobolabSimClient.c:78:7: error: conflicting types for 'createPoints'
+  void createPoints(short x, short y){
+       ^
+..\src\RobolabSimClient.c:78:2: note: an argument type that has a default promotion can't match an empty parameter name list declaration
+  void createPoints(short x, short y){
+  ^
+..\src\RobolabSimClient.c:7:7: note: previous declaration of 'createPoints' was here
+  void createPoints();
+       ^
+..\src\RobolabSimClient.c:91:6: error: static declaration of 'getArrayAddressFromCoord' follows non-static declaration
+  int getArrayAddressFromCoord(short coordToCheck[2]){
+      ^
+..\src\RobolabSimClient.c:8:6: note: previous declaration of 'getArrayAddressFromCoord' was here
+  int getArrayAddressFromCoord();
+      ^
+..\src\RobolabSimClient.c:109:7: error: static declaration of 'setNull' follows non-static declaration
+  void setNull(){
+       ^
+..\src\RobolabSimClient.c:9:7: note: previous declaration of 'setNull' was here
+  void setNull();
+       ^
+..\src\RobolabSimClient.c: In function 'setNull':
+..\src\RobolabSimClient.c:110:3: warning: implicit declaration of function 'Robot_move' [-Wimplicit-function-declaration]
+   Robot_move(0,0);
+   ^
+..\src\RobolabSimClient.c: In function 'main':
+..\src\RobolabSimClient.c:124:7: error: static declaration of 'moveNorth' follows non-static declaration
+  void moveNorth(){
+       ^
+..\src\RobolabSimClient.c:10:7: note: previous declaration of 'moveNorth' was here
+  void moveNorth();
+       ^
+..\src\RobolabSimClient.c:135:7: error: static declaration of 'moveEast' follows non-static declaration
+  void moveEast(){
+       ^
+..\src\RobolabSimClient.c:11:7: note: previous declaration of 'moveEast' was here
+  void moveEast();
+       ^
+..\src\RobolabSimClient.c:146:7: error: static declaration of 'moveSouth' follows non-static declaration
+  void moveSouth(){
+       ^
+..\src\RobolabSimClient.c:12:7: note: previous declaration of 'moveSouth' was here
+  void moveSouth();
+       ^
+..\src\RobolabSimClient.c:157:7: error: static declaration of 'moveWest' follows non-static declaration
+  void moveWest(){
+       ^
+..\src\RobolabSimClient.c:13:7: note: previous declaration of 'moveWest' was here
+  void moveWest();
+       ^
+18:29:32 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c: In function 'setNull':
+..\src\RobolabSimClient.c:112:3: warning: implicit declaration of function 'Robot_move' [-Wimplicit-function-declaration]
+   Robot_move(0,0);
+   ^
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+18:30:35 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+18:37:43 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c: In function 'main':
+..\src\RobolabSimClient.c:160:5: error: expected identifier or '(' before '[' token
+  int[] writeCurrentCoord(){
+     ^
+18:49:04 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+18:49:39 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+19:02:09 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+src\RobolabSimClient.o: In function `visitPoint':
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:39: undefined reference to `getArrayAddressFromCoord'
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:44: undefined reference to `createPoints'
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:45: undefined reference to `createPoints'
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:46: undefined reference to `createPoints'
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:47: undefined reference to `createPoints'
+collect2.exe: error: ld returned 1 exit status
+19:02:51 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+src\RobolabSimClient.o: In function `visitPoint':
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:39: undefined reference to `getArrayAddressFromCoord'
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:44: undefined reference to `createPoints'
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:45: undefined reference to `createPoints'
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:46: undefined reference to `createPoints'
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:47: undefined reference to `createPoints'
+collect2.exe: error: ld returned 1 exit status
+19:03:15 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+src\RobolabSimClient.o: In function `visitPoint':
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:39: undefined reference to `getArrayAddressFromCoord'
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:44: undefined reference to `createPoints'
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:45: undefined reference to `createPoints'
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:46: undefined reference to `createPoints'
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:47: undefined reference to `createPoints'
+collect2.exe: error: ld returned 1 exit status
+19:04:19 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c: In function 'main':
+..\src\RobolabSimClient.c:88:6: error: static declaration of 'getArrayAddressFromCoord' follows non-static declaration
+  int getArrayAddressFromCoord(short coordToCheck[2]){
+      ^
+..\src\RobolabSimClient.c:8:6: note: previous declaration of 'getArrayAddressFromCoord' was here
+  int getArrayAddressFromCoord();
+      ^
+19:05:07 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c: In function 'visitPoint':
+..\src\RobolabSimClient.c:40:3: warning: implicit declaration of function 'getArrayAddressFromCoord' [-Wimplicit-function-declaration]
+   int i = getArrayAddressFromCoord(currentCoord);
+   ^
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+src\RobolabSimClient.o: In function `visitPoint':
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:40: undefined reference to `getArrayAddressFromCoord'
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:45: undefined reference to `createPoints'
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:46: undefined reference to `createPoints'
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:47: undefined reference to `createPoints'
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:48: undefined reference to `createPoints'
+collect2.exe: error: ld returned 1 exit status
+19:05:33 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c: In function 'visitPoint':
+..\src\RobolabSimClient.c:34:3: warning: implicit declaration of function 'getArrayAddressFromCoord' [-Wimplicit-function-declaration]
+   int i = getArrayAddressFromCoord(currentCoord);
+   ^
+..\src\RobolabSimClient.c:39:3: warning: implicit declaration of function 'createPoints' [-Wimplicit-function-declaration]
+   createPoints(currentCoord[0] + 1,currentCoord[1]);
+   ^
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+src\RobolabSimClient.o: In function `visitPoint':
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:34: undefined reference to `getArrayAddressFromCoord'
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:39: undefined reference to `createPoints'
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:40: undefined reference to `createPoints'
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:41: undefined reference to `createPoints'
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:42: undefined reference to `createPoints'
+collect2.exe: error: ld returned 1 exit status
+19:06:36 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c: In function 'visitPoint':
+..\src\RobolabSimClient.c:54:3: warning: implicit declaration of function 'createPoints' [-Wimplicit-function-declaration]
+   createPoints(currentCoord[0] + 1,currentCoord[1]);
+   ^
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+src\RobolabSimClient.o: In function `visitPoint':
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:54: undefined reference to `createPoints'
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:55: undefined reference to `createPoints'
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:56: undefined reference to `createPoints'
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:57: undefined reference to `createPoints'
+collect2.exe: error: ld returned 1 exit status
+19:07:25 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c: In function 'createPoints':
+..\src\RobolabSimClient.c:35:3: warning: implicit declaration of function 'pointExists' [-Wimplicit-function-declaration]
+   if (pointExists(coord2) == false){
+   ^
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+src\RobolabSimClient.o: In function `createPoints':
+C:\Users\Clemens\Desktop\Git\workspace_simulation\simulation\simulation\Debug/../src/RobolabSimClient.c:35: undefined reference to `pointExists'
+collect2.exe: error: ld returned 1 exit status
+19:08:07 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+Info: Nothing to build for simulation
+19:36:21 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c: In function 'printStatusPoints':
+..\src\RobolabSimClient.c:153:3: warning: implicit declaration of function 'printl' [-Wimplicit-function-declaration]
+   printl("An dem Punkt (" + currentCoord[0] + "," + currentCoord[1] + ") sind diese Punkte besucht worden und haben diese Kanten: ");
+   ^
+..\src\RobolabSimClient.c:153:45: error: invalid operands to binary + (have 'char *' and 'char *')
+   printl("An dem Punkt (" + currentCoord[0] + "," + currentCoord[1] + ") sind diese Punkte besucht worden und haben diese Kanten: ");
+                                             ^
+..\src\RobolabSimClient.c:157:40: error: invalid operands to binary + (have 'char *' and 'char *')
+    printl( "(" + allPoints[i].coord[0] + "," + allPoints[i].coord[0] + ") mit den Kanten: " + allPoints[i].edges + "!");
+                                        ^
+..\src\RobolabSimClient.c:159:3: warning: implicit declaration of function 'print' [-Wimplicit-function-declaration]
+   print( "bekannt.")
+   ^
+..\src\RobolabSimClient.c:160:2: error: expected ';' before '}' token
+  }
+  ^
+19:46:46 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+..\src\RobolabSimClient.c: In function 'printStatusPoints':
+..\src\RobolabSimClient.c:157:40: error: invalid operands to binary + (have 'char *' and 'char *')
+    printf( "(" + allPoints[i].coord[0] + "," + allPoints[i].coord[0] + ") mit den Kanten: " + allPoints[i].edges + "!");
+                                        ^
+..\src\RobolabSimClient.c:160:2: error: expected ';' before '}' token
+  }
+  ^
+19:51:12 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+19:52:53 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+19:54:18 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+19:57:23 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+19:58:50 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+19:59:16 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+20:00:16 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+20:02:50 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+20:03:28 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+20:06:05 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+20:07:30 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+20:09:46 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+20:11:50 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+20:13:45 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+20:19:50 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+20:22:55 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+Info: Nothing to build for simulation
+Info: Nothing to build for simulation
+20:30:13 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+20:32:00 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+20:35:44 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+Info: Nothing to build for simulation
+Info: Nothing to build for simulation
+10:00:43 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
+10:01:41 **** Incremental Build of configuration Debug for project simulation ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Python27\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RobolabSimClient.o" "..\\src\\RobolabSimClient.c" 
+gcc "-LC:\\Python27\\libs" -o simulation.exe "src\\Urlcode.o" "src\\RobotProxy.o" "src\\RobolabSimClient.o" "src\\Communication.o" -lpython27 
