@@ -1,4 +1,4 @@
-#include   "../h/Configuration.h"
+#include "../h/Configuration.h"
 
 int main(void) {
 
@@ -44,7 +44,7 @@ int main(void) {
 
 	/* Es wird zuerst überprüft ob an den gegebenen Koordinaten schon ein Punk existiert.
 	 * Fals dies nicht der Fall ist wird ein neuer Punkt an den Koordinaten erstellt und
-	 * der Wert des current Arrays, also des derzeit vereachteten Punkts zurückgegeben.
+	 * der Wert des current Arrays, also des erzeit vereachteten Punkts zurückgegeben.
 	 */
 	void createPoints(short x, short y){
 		short coord[2] = {x, y};
@@ -172,18 +172,7 @@ int main(void) {
 	printf("Intersection: %d\n", Robot_GetIntersections());
 	printf("Token: %d\n", Robot_Move(1, 0));
 	printf("Intersection: %d\n", Robot_GetIntersections());
-	//printf("Token: %d\n", Robot_Move(2, 0));
-
-
-
-	void checkEdges(short currentEdges[]){
-	if (currentEdges[0]==3)
-	moveWest();
-
-	}
-	void moveRandom(){
-
-	}
+	printf("Token: %d\n", Robot_Move(2, 0));
 	*/
 
 
