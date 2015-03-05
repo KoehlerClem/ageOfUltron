@@ -162,42 +162,43 @@ int main(void) {
 
 	// ---------------- Bear Heaven -----------------
 
-/*void checkVisited(){
- * currentCoord1=currentCoord[0] + 1;
- * currentCoord2=currentCoord[0] - 1;
- * currentCoord3=currentCoord[1] + 1;
- * currentCoord4=currentCoord[1] - 1;
- *
-	int i = getArrayAddressFromCoord(currentCoord1);
+	int westVisit=0,eastVisit=0,northVisit=0,southVisit=0;
+/*
+void checkVisited(){
+	short eastPoint[2] = {currentCoord[0] + 1,currentCoord[1]};
+	short westPoint[2] = {currentCoord[0] - 1,currentCoord[1]};
+	short northPoint[2] = {currentCoord[0],currentCoord[1] + 1};
+	short southPoint[2] = {currentCoord[0],currentCoord[1] - 1};
 
-	if (allPoints[i].visited == 1){
+
+
+
+	int a = getArrayAddressFromCoord(eastPoint);
+	int b = getArrayAddressFromCoord(westPoint);
+	int c = getArrayAddressFromCoord(northPoint);
+	int d = getArrayAddressFromCoord(southPoint);
+
+	if (allPoints[b].visited == 0){
+
+		    westVisit = 1;
 
 	}
+	if (allPoints[a].visited == 0){
 
+			eastVisit = 1;
+		}
+	if (allPoints[c].visited == 0){
+
+			northVisit = 1;
+		}
+	if (allPoints[d].visited == 0){
+
+			southVisit = 1;
 
 }
 }
-	void checkEdges(short currentEdges[],){
-		int i;
-		if (currentEdges[3]==1){
-			for (i = 0; i < 3; i++){
-				moveWest();
-				visitPoint();
-			}
-				if(currentEdges[2]==1){
-				moveEast();
-				visitPoint();
-				}
-				else {
-					if(currentEdges[0]==1){
-					moveNorth();
-					visitPoint();
-					}
-			moveSouth();
-			visitPoint();
-				}
-	}*/
 
+*/
 
 	setNull();printStatusPoints();
 	moveSouth();printStatusPoints();
