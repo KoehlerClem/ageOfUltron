@@ -156,7 +156,41 @@ int main(void) {
 		}
 		printf( "bekannt.\n\n\n");
 	}
+/*void checkVisited(){
+ * currentCoord1=currentCoord[0] + 1;
+ * currentCoord2=currentCoord[0] - 1;
+ * currentCoord3=currentCoord[1] + 1;
+ * currentCoord4=currentCoord[1] - 1;
+ *
+	int i = getArrayAddressFromCoord(currentCoord1);
 
+	if (allPoints[i].visited == 1){
+
+	}
+
+
+}
+}
+	void checkEdges(short currentEdges[],){
+		int i;
+		if (currentEdges[3]==1){
+			for (i = 0; i < 3; i++){
+				moveWest();
+				visitPoint();
+			}
+				if(currentEdges[2]==1){
+				moveEast();
+				visitPoint();
+				}
+				else {
+					if(currentEdges[0]==1){
+					moveNorth();
+					visitPoint();
+					}
+			moveSouth();
+			visitPoint();
+				}
+	}*/
 
 
 	setNull();printStatusPoints();
@@ -174,17 +208,9 @@ int main(void) {
 	printf("Intersection: %d\n", Robot_GetIntersections());
 	//printf("Token: %d\n", Robot_Move(2, 0));
 
-
-
-	void checkEdges(short currentEdges[]){
-	if (currentEdges[0]==3)
-	moveWest();
-
-	}
-	void moveRandom(){
-
-	}
 	*/
+
+
 
 
 	return EXIT_SUCCESS;
