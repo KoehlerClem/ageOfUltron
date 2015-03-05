@@ -1,6 +1,9 @@
 #include   "../h/Configuration.h"
 
+
 int main(void) {
+
+
 
 
 	// ---------------- Steak Area -----------------
@@ -20,11 +23,13 @@ int main(void) {
 	point allPoints[77];					// Das Array in dem Alle Punkte gespeichert werden
 	short currentArrayPoint = 1;			// Der Punkt an dem der letzte Punkt in dem Array erstellt wurde
 	short currentCoord[2] = {0,0};
-	short currentPoint = 0;// Die aktuelle Coordinate des aktuellen Punktes
+	short currentPoint = 0;					// Die aktuelle Coordinate des aktuellen Punktes
+	short nextMove = 1;
+	short lastPointVisited;
 
 	//Füllt alle Points mit werten auf
 	short pointsfiller;
-	for ( pointsfiller = 0; pointsfiller < 76; pointsfiller++ ){
+	for ( pointsfiller = 0; pointsfiller < 77; pointsfiller++ ){
 		allPoints[pointsfiller].coord[0] = 0;
 		allPoints[pointsfiller].coord[1] = 0;
 		allPoints[pointsfiller].visited = 0;
@@ -44,7 +49,7 @@ int main(void) {
 			case 16*6: allPoints[pointInArray].arrayEdges[2] = 1; allPoints[pointInArray].arrayEdges[3] = 1; break;
 			case 16*7: allPoints[pointInArray].arrayEdges[0] = 1; allPoints[pointInArray].arrayEdges[2] = 1; allPoints[pointInArray].arrayEdges[3] = 1; break;
 			case 16*8: allPoints[pointInArray].arrayEdges[1] = 1; break;
-			case 16*9: allPoints[pointInArray].arrayEdges[0] = 1; allPoints[pointInArray].arrayEdges[2] = 1; break;
+			case 16*9: allPoints[pointInArray].arrayEdges[0] = 1; allPoints[pointInArray].arrayEdges[1] = 1; break;
 			case 16*10: allPoints[pointInArray].arrayEdges[1] = 1; allPoints[pointInArray].arrayEdges[2] = 1; break;
 			case 16*11: allPoints[pointInArray].arrayEdges[0] = 1; allPoints[pointInArray].arrayEdges[1] = 1; allPoints[pointInArray].arrayEdges[2] = 1; break;
 			case 16*12: allPoints[pointInArray].arrayEdges[1] = 1; allPoints[pointInArray].arrayEdges[3] = 1; break;
@@ -118,17 +123,62 @@ int main(void) {
 	/* Wenn ein Punkt besucht wird, werden die Kanten des aktuellen Punktes gespeichert,
 	 * er als Besucht markiert und die 4 Umliegenden Punkte erstellt, fals es sie noch nicht gibt!
 	*/
-	void visitPoint(){
 
+	void setNextMove(){
+
+		short northPoint[2] = {currentCoord[0], currentCoord[1] + 1};
+		short eastPoint[2] = {currentCoord[0] + 1, currentCoord[1]};
+		short southPoint[2] = {currentCoord[0], currentCoord[1] - 1};
+		short westPoint[2] = {currentCoord[0] - 1, currentCoord[1]};
+
+		short punkte[4];
+
+		punkte[0] = getArrayAddressFromCoord(northPoint);
+		punkte[1] = getArrayAddressFromCoord(eastPoint);
+		punkte[2] = getArrayAddressFromCoord(southPoint);
+		punkte[3] = getArrayAddressFromCoord(westPoint);
+
+		// Überprüfen auf Kante und nicht besucht
+
+		int i;
+		for( i = 0; i < 4; i++){
+			if (allPoints[currentPoint].arrayEdges[i] == 1){
+				if (allPoints[punkte[i]].visited == 0){
+					nextMove = i;
+					return;
+				}
+			}
+		}
+
+		for( i = 0; i < 4; i++){
+			if (allPoints[currentPoint].arrayEdges[i] == 1){
+				if (lastPointVisited != punkte[i]){
+				nextMove = i;
+				return;
+				}
+			}
+		}
+
+		for( i = 0; i < 4; i++){
+			if (allPoints[currentPoint].arrayEdges[i] == 1){
+				nextMove = i;
+				return;
+			}
+		}
+	}
+
+
+
+	void visitPoint(){
+		lastPointVisited = currentPoint;
 		//Holt die Adresse in dem Array zu den Aktuellen Coordinaten
 		currentPoint = getArrayAddressFromCoord(currentCoord);
 		if ( allPoints[currentPoint].visited == 0){
 			edgeToArray(currentPoint, Robot_GetIntersections());
 			allPoints[currentPoint].visited = 1;
-			updatePoints();
 		}
-
-
+		updatePoints();
+		setNextMove();
 	}
 
 
@@ -203,77 +253,27 @@ int main(void) {
 
 	// ---------------- Bear Heaven -----------------
 
-<<<<<<< HEAD
-	int westVisit=0,eastVisit=0,northVisit=0,southVisit=0;
-/*
-void checkVisited(){
-	short eastPoint[2] = {currentCoord[0] + 1,currentCoord[1]};
-	short westPoint[2] = {currentCoord[0] - 1,currentCoord[1]};
-	short northPoint[2] = {currentCoord[0],currentCoord[1] + 1};
-	short southPoint[2] = {currentCoord[0],currentCoord[1] - 1};
-=======
-/*void checkVisited(){
- * currentCoord1=currentCoord[0] + 1;
- * currentCoord2=currentCoord[0] - 1;
- * currentCoord3=currentCoord[1] + 1;
- * currentCoord4=currentCoord[1] - 1;
- *
-	short i = getArrayAddressFromCoord(currentCoord1);
->>>>>>> origin/master
 
 
+	//endlosschelife
+	setNull();printStatusPoints();
+	short ever = 0;
 
-
-	int a = getArrayAddressFromCoord(eastPoint);
-	int b = getArrayAddressFromCoord(westPoint);
-	int c = getArrayAddressFromCoord(northPoint);
-	int d = getArrayAddressFromCoord(southPoint);
-
-	if (allPoints[b].visited == 0){
-
-		    westVisit = 1;
+	while(ever < 100){
+		printf("Current ArrayPoint:%i, Current Point: %i, Verfügbare Kanten: %i, %i, %i, %i!\n", currentArrayPoint, currentPoint, allPoints[currentPoint].arrayEdges[0], allPoints[currentPoint].arrayEdges[1], allPoints[currentPoint].arrayEdges[2], allPoints[currentPoint].arrayEdges[3]);
+		switch(nextMove){
+		case 0: moveNorth(); break;
+		case 1: moveEast(); break;
+		case 2: moveSouth(); break;
+		case 3: moveWest(); break;
+		}
+		ever++;
 
 	}
-	if (allPoints[a].visited == 0){
 
-			eastVisit = 1;
-		}
-	if (allPoints[c].visited == 0){
 
-			northVisit = 1;
-		}
-	if (allPoints[d].visited == 0){
 
-			southVisit = 1;
-
-}
-}
-<<<<<<< HEAD
-=======
-	void checkEdges(short currentEdges[],){
-		short i;
-		if (currentEdges[3]==1){
-			for (i = 0; i < 3; i++){
-				moveWest();
-				visitPoint();
-			}
-				if(currentEdges[2]==1){
-				moveEast();
-				visitPoint();
-				}
-				else {
-					if(currentEdges[0]==1){
-					moveNorth();
-					visitPoint();
-					}
-			moveSouth();
-			visitPoint();
-				}
-	}*/
->>>>>>> origin/master
-
-*/
-
+/*
 	setNull();printStatusPoints();
 	moveSouth();printStatusPoints();
 	moveSouth();printStatusPoints();
@@ -282,7 +282,6 @@ void checkVisited(){
 	moveNorth();printStatusPoints();
 	moveEast();printStatusPoints();
 
-	/*
 	printf("Token: %d\n", Robot_Move(0, 0));
 	printf("Intersection: %d\n", Robot_GetIntersections());
 	printf("Token: %d\n", Robot_Move(1, 0));
