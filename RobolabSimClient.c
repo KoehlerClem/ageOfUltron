@@ -2,6 +2,9 @@
 
 int main(void) {
 
+
+	// ---------------- Steak Area -----------------
+
 	/* Hier wird der Struct für einen Point definiert. Der Point hat x,y Coordinaten
 	 * in coord gespeichert, einen int Wert für die Kanten und einen bool-Wert des
 	 * aussagt ob der Punkt schon besucht wurde!
@@ -156,6 +159,9 @@ int main(void) {
 		}
 		printf( "bekannt.\n\n\n");
 	}
+
+	// ---------------- Bear Heaven -----------------
+
 /*void checkVisited(){
  * currentCoord1=currentCoord[0] + 1;
  * currentCoord2=currentCoord[0] - 1;
