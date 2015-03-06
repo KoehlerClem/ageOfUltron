@@ -8,7 +8,7 @@ int main(void) {
 
 	// ---------------- Steak Area -----------------
 	//das hier ist Toms Kommentar
-	//Steak!!
+	//Steak!! jojo
 
 	/* Hier wird der Struct für einen Point definiert. Der Point hat x,y Coordinaten
 	 * in coord gespeichert, einen short Wert für die Kanten und einen bool-Wert des
