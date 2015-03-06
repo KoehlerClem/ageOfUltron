@@ -10,6 +10,7 @@ int main(void) {
 	//das hier ist Toms Kommentar
 <<<<<<< HEAD
 	//Steak!! jojo
+
 =======
 	//moin
 	//Steak!!
