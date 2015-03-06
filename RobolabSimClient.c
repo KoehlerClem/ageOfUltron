@@ -13,7 +13,7 @@ int main(void) {
 
 =======
 	//moin
-	//Steak!! jojo
+	//Steak!!
 >>>>>>> origin/master
 
 
