@@ -7,6 +7,17 @@ int main(void) {
 
 
 	// ---------------- Steak Area -----------------
+<<<<<<< HEAD
+=======
+	//das hier ist Toms Kommentar
+<<<<<<< HEAD
+	//Steak!! jojo
+
+=======
+	//moin
+	//Steak!! jojo
+>>>>>>> origin/master
+>>>>>>> origin/master
 
 
 	/* Hier wird der Struct für einen Point definiert. Der Point hat x,y Coordinaten
