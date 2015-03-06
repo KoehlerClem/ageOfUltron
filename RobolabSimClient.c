@@ -15,6 +15,7 @@ int main(void) {
 	//Steak!!
 >>>>>>> origin/master
 
+
 	/* Hier wird der Struct für einen Point definiert. Der Point hat x,y Coordinaten
 	 * in coord gespeichert, einen short Wert für die Kanten und einen bool-Wert des
 	 * aussagt ob der Punkt schon besucht wurde! jajaja
