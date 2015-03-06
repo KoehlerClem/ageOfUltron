@@ -7,10 +7,12 @@ int main(void) {
 
 
 	// ---------------- Steak Area -----------------
+	//das hier ist Clemens Kommentar
+	//das hier ist die 2. Zeile
 
 	/* Hier wird der Struct für einen Point definiert. Der Point hat x,y Coordinaten
 	 * in coord gespeichert, einen short Wert für die Kanten und einen bool-Wert des
-	 * aussagt ob der Punkt schon besucht wurde!
+	 * aussagt ob der Punkt schon besucht wurde! jajaja
 	 */
 	typedef struct points{
 		short coord[2];
