@@ -27,6 +27,7 @@ int main(void) {
 	short currentPoint = 0;					// Die aktuelle Coordinate des aktuellen Punktes
 	short nextMove = 1;
 	short lastPointVisited;
+	short nachbarPunkte[4];
 
 	//Füllt alle Points mit werten auf
 	short pointsfiller;
@@ -125,26 +126,27 @@ int main(void) {
 	 * er als Besucht markiert und die 4 Umliegenden Punkte erstellt, fals es sie noch nicht gibt!
 	*/
 
+	void setNeighbourPoints(short coords[2]){
+		short northPoint[2] = {coords[0], coords[1] + 1};
+		short eastPoint[2] = {coords[0] + 1, coords[1]};
+		short southPoint[2] = {coords[0], coords[1] - 1};
+		short westPoint[2] = {coords[0] - 1, coords[1]};
+		nachbarPunkte[0] = getArrayAddressFromCoord(northPoint);
+		nachbarPunkte[1] = getArrayAddressFromCoord(eastPoint);
+		nachbarPunkte[2] = getArrayAddressFromCoord(southPoint);
+		nachbarPunkte[3] = getArrayAddressFromCoord(westPoint);
+	}
+
 	void setNextMove(){
 
-		short northPoint[2] = {currentCoord[0], currentCoord[1] + 1};
-		short eastPoint[2] = {currentCoord[0] + 1, currentCoord[1]};
-		short southPoint[2] = {currentCoord[0], currentCoord[1] - 1};
-		short westPoint[2] = {currentCoord[0] - 1, currentCoord[1]};
-
-		short punkte[4];
-
-		punkte[0] = getArrayAddressFromCoord(northPoint);
-		punkte[1] = getArrayAddressFromCoord(eastPoint);
-		punkte[2] = getArrayAddressFromCoord(southPoint);
-		punkte[3] = getArrayAddressFromCoord(westPoint);
+		setNeighbourPoints(currentCoord);
 
 		// Überprüfen auf Kante und nicht besucht
 
-		int i;
+		short i;
 		for( i = 0; i < 4; i++){
 			if (allPoints[currentPoint].arrayEdges[i] == 1){
-				if (allPoints[punkte[i]].visited == 0){
+				if (allPoints[nachbarPunkte[i]].visited == 0){
 					nextMove = i;
 					return;
 				}
@@ -153,7 +155,7 @@ int main(void) {
 
 		for( i = 0; i < 4; i++){
 			if (allPoints[currentPoint].arrayEdges[i] == 1){
-				if (lastPointVisited != punkte[i]){
+				if (lastPointVisited != nachbarPunkte[i]){
 				nextMove = i;
 				return;
 				}
@@ -253,6 +255,12 @@ int main(void) {
 	}
 
 	// ---------------- Bear Heaven -----------------
+
+	void getNewPath(){
+		short checkThisCoord[2] = {currentCoord[0], currentCoord[1]};
+		setNeighbourPoints(checkThisCoord);
+
+	}
 
 
 
