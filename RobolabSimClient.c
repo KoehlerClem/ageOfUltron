@@ -156,6 +156,7 @@ int main(void) {
 		if (currentCoord[1] != 0){
 			Robot_Move(currentCoord[0], currentCoord[1] + 1);
 			currentCoord[1] = currentCoord[1] + 1;
+			// bewege auch den roboter dahin
 			visitPoint();
 		}
 	}
