@@ -223,8 +223,8 @@ int main(void) {
 		printf("\nStart getNextPoint vom Punkt (%i,%i) aus! \n", currentCoord[0], currentCoord[1]);
 		short i;		//Läuft in der for-schleife von 0-3 für alle Richtungen
 		short nextPointToVisit = 0;			//Der nächste Punkt der noch nicht besucht ist
-		short buffer1[20] = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};		// Hier sind die Punkte gespeicher die geprüft werden
-		short buffer2[20] = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};		// Hier sind die nächsten Punkte die untersucht werden sollen
+		short buffer1[10] = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};		// Hier sind die Punkte gespeicher die geprüft werden
+		short buffer2[10] = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};		// Hier sind die nächsten Punkte die untersucht werden sollen
 		short indexBuffer1 = 0;		// Laufvariable die den ersten Buffer durchläuft
 		short indexBuffer2;		// Laufvariable für den 2. Buffer
 		short checkThisPoint;		//Der Punkt dessen Nachbarn als nächstes überprüft werden sollen
@@ -272,12 +272,14 @@ int main(void) {
 						}
 						buffer2[indexBuffer2] = neighbourPoint[i];		// Speichert den gerade betrachteten Nachbarpunkt an der Kante i in das Buff
 						indexBuffer2++;
+
+
 					}
 				}
 				indexBuffer1++;
 			}
 
-			for (indexBuffer2 = 0; indexBuffer2 < 20; indexBuffer2++){		// Schreibt den Buffer2 in Buffer1 und leert Buffer2 wenn Buffer1 abgearbeitet ist
+			for (indexBuffer2 = 0; indexBuffer2 < 10; indexBuffer2++){		// Schreibt den Buffer2 in Buffer1 und leert Buffer2 wenn Buffer1 abgearbeitet ist
 				buffer1[indexBuffer2] = buffer2[indexBuffer2];
 				buffer2[indexBuffer2] = -1;
 			}
@@ -290,8 +292,8 @@ int main(void) {
 		printf("\nStart getNextPoint vom Punkt (%i,%i) aus! \n", currentCoord[0], currentCoord[1]);
 		short i;		//Läuft in der for-schleife von 0-3 für alle Richtungen
 		short nextPointToVisit = 0;			//Der nächste Punkt der noch nicht besucht ist
-		short buffer1[20] = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};		// Hier sind die Punkte gespeicher die geprüft werden
-		short buffer2[20] = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};		// Hier sind die nächsten Punkte die untersucht werden sollen
+		short buffer1[10] = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};		// Hier sind die Punkte gespeicher die geprüft werden
+		short buffer2[10] = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};		// Hier sind die nächsten Punkte die untersucht werden sollen
 		short indexBuffer1 = 0;		// Laufvariable die den ersten Buffer durchläuft
 		short indexBuffer2;		// Laufvariable für den 2. Buffer
 		short checkThisPoint;		//Der Punkt dessen Nachbarn als nächstes überprüft werden sollen
@@ -341,12 +343,13 @@ int main(void) {
 						allPoints[neighbourPoint[i]].pathToPointExists = 1;
 						buffer2[indexBuffer2] = neighbourPoint[i];		// Speichert den gerade betrachteten Nachbarpunkt an der Kante i in das Buff
 						indexBuffer2++;
+						printf(" Buffer ist %i groß \n",indexBuffer2 );
 					}
 				}
 				indexBuffer1++;
 			}
 
-			for (indexBuffer2 = 0; indexBuffer2 < 20; indexBuffer2++){		// Schreibt den Buffer2 in Buffer1 und leert Buffer2 wenn Buffer1 abgearbeitet ist
+			for (indexBuffer2 = 0; indexBuffer2 < 10; indexBuffer2++){		// Schreibt den Buffer2 in Buffer1 und leert Buffer2 wenn Buffer1 abgearbeitet ist
 				buffer1[indexBuffer2] = buffer2[indexBuffer2];
 				buffer2[indexBuffer2] = -1;
 			}
@@ -357,7 +360,7 @@ int main(void) {
 	setNull();printStatusPoints();
 
 	short ever = 0;
-	while(ever < 20){
+	while(ever < 48){
 		useNewPath(getNextPoint());
 		ever++;
 	}
