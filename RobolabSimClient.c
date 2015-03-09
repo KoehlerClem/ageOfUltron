@@ -235,7 +235,7 @@ int main(void) {
 		for(i = 0; i < 77; i++){		// Setzt für alle Punkte zurück, dass es einen Pfad zu ihnen gibt
 			allPoints[i].edgeToPointBefore = -1;
 		}
-		allPoints[currentPoint].edgeToPointBefore = -1;
+		//allPoints[currentPoint].edgeToPointBefore = -1;
 		allPoints[currentPoint].pathToPointExists = 1;
 		setNeighbourPoints(currentPoint);		// Sucht die Nachbarpunkte des aktuellen Punktes
 		for( i = 0; i < 4; i++){		//Füllt Buffer1 für den ersten Durchlauf mit den Nachbarpunkten auf die eine Kante (i) zu dem Punkt haben
@@ -265,13 +265,11 @@ int main(void) {
 				setNeighbourPoints(checkThisPoint);		// Füllt das Array neightbourPoint mit den Nachbarpunkten des momentan betrachteten Punktes auf
 				for(i = 0; i < 4; i++){
 					if(allPoints[checkThisPoint].arrayEdges[i] == 1 && allPoints[neighbourPoint[i]].pathToPointExists == 0){		// Wenn es von dem momentan betrachtetem Punkt eine Kante in Richtung i gibt
-						if(allPoints[neighbourPoint[i]].visited == 0){		// und es zu dem Punkt in Richtung i keinen Weg gibt
-							allPoints[neighbourPoint[i]].edgeToPointBefore = i;			// ist der Weg zu dem Punkt die Kante i von dem jetzigem Punkt aus
-							allPoints[neighbourPoint[i]].pathToPointExists = 1;
-							return nextPointToVisit = neighbourPoint[i];
-						}
 						allPoints[neighbourPoint[i]].edgeToPointBefore = i;			// ist der Weg zu dem Punkt die Kante i von dem jetzigem Punkt aus
 						allPoints[neighbourPoint[i]].pathToPointExists = 1;
+						if(allPoints[neighbourPoint[i]].visited == 0){		// und es zu dem Punkt in Richtung i keinen Weg gibt
+							return nextPointToVisit = neighbourPoint[i];
+						}
 						buffer2[indexBuffer2] = neighbourPoint[i];		// Speichert den gerade betrachteten Nachbarpunkt an der Kante i in das Buff
 						indexBuffer2++;
 					}
