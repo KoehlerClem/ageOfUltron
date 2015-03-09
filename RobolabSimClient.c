@@ -56,7 +56,6 @@ int main(void) {
 		}
 	}
 
-
 	/* Vergleicht zuerst die X-Coordinate des jeweils betrachteten Punktes gegen die übergebene X-Coordinate
 	 * und wenn wenn diese Übereistimmt vergleicht die Funktion auch die Y-Coordinate. Wenn diese auch gleich ist
 	 * wird true zurückgegeben.
@@ -126,9 +125,6 @@ int main(void) {
 		neighbourPoint[3] = getArrayAddressFromCoord(westPoint);
 	}
 
-
-
-
 	void visitPoint(){
 		//Holt die Adresse in dem Array zu den Aktuellen Coordinaten
 		currentPoint = getArrayAddressFromCoord(currentCoord);
@@ -137,7 +133,6 @@ int main(void) {
 			allPoints[currentPoint].visited = 1;
 			updatePoints();
 		}
-
 	}
 
 	/* Setzt den Punkt auf 0,0, empfohlen für den Start der Simulation
@@ -224,7 +219,6 @@ int main(void) {
 	}
 
 	short getNextPoint(){
-		short z;
 
 		printf("\nStart getNextPoint vom Punkt (%i,%i) aus! \n", currentCoord[0], currentCoord[1]);
 		short i;		//Läuft in der for-schleife von 0-3 für alle Richtungen
@@ -240,7 +234,6 @@ int main(void) {
 		}
 		for(i = 0; i < 77; i++){		// Setzt für alle Punkte zurück, dass es einen Pfad zu ihnen gibt
 			allPoints[i].edgeToPointBefore = -1;
-
 		}
 		allPoints[currentPoint].edgeToPointBefore = -1;
 		allPoints[currentPoint].pathToPointExists = 1;
@@ -261,17 +254,14 @@ int main(void) {
 			printf("Starte Breitensuche \n");
 			indexBuffer1 = 0;		// Setzt den Indexbuffer auf den ersten Punkt im Buffer1-Array
 			indexBuffer2 = 0;		// Der nächste neue zu überprüfende Punkt wird im Buffer2 an die Position 0 geschrieben
-			printf("Betrachten jetzt den Punkt (%i,%i) mit Wegkante %i\n", allPoints[buffer1[indexBuffer1]].coord[0],allPoints[buffer1[indexBuffer1]].coord[1], allPoints[indexBuffer1].edgeToPointBefore);
 
 			while( buffer1[indexBuffer1] != -1){		// Überprüft ob es noch einen Punkt im Buffer1-Array gibt
-				printf("Lese Array 1 aus \n");
 				checkThisPoint = buffer1[indexBuffer1];		// Ließt aus dem Array die Adresse des zu überprüfenden Punkted aus
 
 				if(allPoints[checkThisPoint].visited == 0){		// Checkt ob der momentan betrachtete Punkt schon besucht worden ist
 					return nextPointToVisit = checkThisPoint;		// Fals ja, setzt den nächst zu besuchenden Point gleich dem momentan betrachteten Punkt
 				}
 
-				printf("Läd den Buffer2 mit den Nachbarn mit Kanten von dem betrachtetem Punkt\n");
 				setNeighbourPoints(checkThisPoint);		// Füllt das Array neightbourPoint mit den Nachbarpunkten des momentan betrachteten Punktes auf
 				for(i = 0; i < 4; i++){
 					if(allPoints[checkThisPoint].arrayEdges[i] == 1 && allPoints[neighbourPoint[i]].pathToPointExists == 0){		// Wenn es von dem momentan betrachtetem Punkt eine Kante in Richtung i gibt
@@ -281,7 +271,6 @@ int main(void) {
 							return nextPointToVisit = neighbourPoint[i];
 						}
 						allPoints[neighbourPoint[i]].edgeToPointBefore = i;			// ist der Weg zu dem Punkt die Kante i von dem jetzigem Punkt aus
-						printf("\n\n Zielpunkt:(%i,%i) Erster Rücksprung:%i",allPoints[neighbourPoint[i]].coord[0], allPoints[neighbourPoint[i]].coord[1], allPoints[neighbourPoint[i]].edgeToPointBefore );
 						allPoints[neighbourPoint[i]].pathToPointExists = 1;
 						buffer2[indexBuffer2] = neighbourPoint[i];		// Speichert den gerade betrachteten Nachbarpunkt an der Kante i in das Buff
 						indexBuffer2++;
@@ -297,18 +286,84 @@ int main(void) {
 		}
 	}
 
+	short goHome(){
+		allPoints[0].visited = 0;
 
+		printf("\nStart getNextPoint vom Punkt (%i,%i) aus! \n", currentCoord[0], currentCoord[1]);
+		short i;		//Läuft in der for-schleife von 0-3 für alle Richtungen
+		short nextPointToVisit = 0;			//Der nächste Punkt der noch nicht besucht ist
+		short buffer1[20] = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};		// Hier sind die Punkte gespeicher die geprüft werden
+		short buffer2[20] = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};		// Hier sind die nächsten Punkte die untersucht werden sollen
+		short indexBuffer1 = 0;		// Laufvariable die den ersten Buffer durchläuft
+		short indexBuffer2;		// Laufvariable für den 2. Buffer
+		short checkThisPoint;		//Der Punkt dessen Nachbarn als nächstes überprüft werden sollen
 
+		for(i = 0; i < 77; i++){		// Setzt für alle Punkte zurück, dass es einen Pfad zu ihnen gibt
+			allPoints[i].pathToPointExists = 0;
+		}
+		for(i = 0; i < 77; i++){		// Setzt für alle Punkte zurück, dass es einen Pfad zu ihnen gibt
+			allPoints[i].edgeToPointBefore = -1;
+		}
+		allPoints[currentPoint].edgeToPointBefore = -1;
+		allPoints[currentPoint].pathToPointExists = 1;
+		setNeighbourPoints(currentPoint);		// Sucht die Nachbarpunkte des aktuellen Punktes
+		for( i = 0; i < 4; i++){		//Füllt Buffer1 für den ersten Durchlauf mit den Nachbarpunkten auf die eine Kante (i) zu dem Punkt haben
+			if(allPoints[currentPoint].arrayEdges[i] == 1){
+				buffer1[indexBuffer1] = neighbourPoint[i];
+				allPoints[neighbourPoint[i]].edgeToPointBefore = i;			// ist der Weg zu dem Punkt die Kante i von dem jetzigem Punkt aus
+				allPoints[neighbourPoint[i]].pathToPointExists = 1;
+				if(buffer1[indexBuffer1] == 0){
+					return nextPointToVisit = buffer1[indexBuffer1];
+				}
+				indexBuffer1++;
+			}
+		}
+
+		while(nextPointToVisit == 0){		// => Solange kein Punkt gefunden ist der noch nicht besucht worden ist
+			printf("Starte Breitensuche \n");
+			indexBuffer1 = 0;		// Setzt den Indexbuffer auf den ersten Punkt im Buffer1-Array
+			indexBuffer2 = 0;		// Der nächste neue zu überprüfende Punkt wird im Buffer2 an die Position 0 geschrieben
+
+			while( buffer1[indexBuffer1] != -1){		// Überprüft ob es noch einen Punkt im Buffer1-Array gibt
+				checkThisPoint = buffer1[indexBuffer1];		// Ließt aus dem Array die Adresse des zu überprüfenden Punkted aus
+
+				if(checkThisPoint == 0){		// Checkt ob der momentan betrachtete Punkt schon besucht worden ist
+					return nextPointToVisit = checkThisPoint;		// Fals ja, setzt den nächst zu besuchenden Point gleich dem momentan betrachteten Punkt
+				}
+
+				setNeighbourPoints(checkThisPoint);		// Füllt das Array neightbourPoint mit den Nachbarpunkten des momentan betrachteten Punktes auf
+				for(i = 0; i < 4; i++){
+					if(allPoints[checkThisPoint].arrayEdges[i] == 1 && allPoints[neighbourPoint[i]].pathToPointExists == 0){		// Wenn es von dem momentan betrachtetem Punkt eine Kante in Richtung i gibt
+						if(neighbourPoint[i] == 0){		// und es zu dem Punkt in Richtung i keinen Weg gibt
+							allPoints[neighbourPoint[i]].edgeToPointBefore = i;			// ist der Weg zu dem Punkt die Kante i von dem jetzigem Punkt aus
+							allPoints[neighbourPoint[i]].pathToPointExists = 1;
+							return nextPointToVisit = neighbourPoint[i];
+						}
+						allPoints[neighbourPoint[i]].edgeToPointBefore = i;			// ist der Weg zu dem Punkt die Kante i von dem jetzigem Punkt aus
+						allPoints[neighbourPoint[i]].pathToPointExists = 1;
+						buffer2[indexBuffer2] = neighbourPoint[i];		// Speichert den gerade betrachteten Nachbarpunkt an der Kante i in das Buff
+						indexBuffer2++;
+					}
+				}
+				indexBuffer1++;
+			}
+
+			for (indexBuffer2 = 0; indexBuffer2 < 20; indexBuffer2++){		// Schreibt den Buffer2 in Buffer1 und leert Buffer2 wenn Buffer1 abgearbeitet ist
+				buffer1[indexBuffer2] = buffer2[indexBuffer2];
+				buffer2[indexBuffer2] = -1;
+			}
+		}
+	}
 	//endlosschelife
 
 	setNull();printStatusPoints();
 
 	short ever = 0;
-	while(ever < 100){
-		useNewPath(getNextPoint());;
+	while(ever < 20){
+		useNewPath(getNextPoint());
 		ever++;
 	}
-	getNextPoint();
+	useNewPath(goHome());
 	//printf("\n\n Zielpunkt:(%i,%i) Erster Rücksprung:%i",allPoints[getNextPoint()].coord[0], allPoints[getNextPoint()].coord[1], allPoints[getNextPoint()].edgeToPointBefore );
 
 /*
