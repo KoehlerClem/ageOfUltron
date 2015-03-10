@@ -158,11 +158,15 @@ int main(void) {
 		if (currentCoord[1] != 0){
 			Robot_Move(currentCoord[0], currentCoord[1] + 1);
 			currentCoord[1] = currentCoord[1] + 1;
+<<<<<<< HEAD
 			if (allPoints[getArrayAddressFromCoord(currentCoord)].visited==0){
 				if (Robot_Move(currentCoord[0], currentCoord[1]) == ROBOT_TOKENFOUND){
 								token++;
 							}
 			}
+=======
+			// bewege auch den roboter dahin
+>>>>>>> origin/master
 			visitPoint();
 
 		}
