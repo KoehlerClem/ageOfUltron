@@ -3,6 +3,7 @@
 
 int main(void) {
 
+
 	// ---------------- Steak Area -----------------
 
 	/* Hier wird der Struct für einen Point definiert. Der Point hat x,y Coordinaten
@@ -152,11 +153,18 @@ int main(void) {
 	/* Bewegt den Roboter einen Punkt nach oben bzw erhöht den y-Wert der
 	 * Coordinate um 1 wenn möglich
 	 */
+	short token=0;
 	void moveNorth(){
 		if (currentCoord[1] != 0){
 			Robot_Move(currentCoord[0], currentCoord[1] + 1);
 			currentCoord[1] = currentCoord[1] + 1;
+			if (allPoints[getArrayAddressFromCoord(currentCoord)].visited==0){
+				if (Robot_Move(currentCoord[0], currentCoord[1]) == ROBOT_TOKENFOUND){
+								token++;
+							}
+			}
 			visitPoint();
+
 		}
 	}
 
@@ -167,6 +175,10 @@ int main(void) {
 		if (currentCoord[0] != 6){
 			Robot_Move(currentCoord[0] + 1, currentCoord[1]);
 			currentCoord[0] = currentCoord[0] + 1;
+			if (allPoints[getArrayAddressFromCoord(currentCoord)].visited==0){
+				if (Robot_Move(currentCoord[0], currentCoord[1]) == ROBOT_TOKENFOUND){
+											token++;
+										}}
 			visitPoint();
 		}
 	}
@@ -178,6 +190,10 @@ int main(void) {
 		if (currentCoord[1] != -6){
 			Robot_Move(currentCoord[0], currentCoord[1] - 1);
 			currentCoord[1] = currentCoord[1] - 1;
+			if (allPoints[getArrayAddressFromCoord(currentCoord)].visited==0){
+				if (Robot_Move(currentCoord[0], currentCoord[1]) == ROBOT_TOKENFOUND){
+											token++;
+										}}
 			visitPoint();
 		}
 	}
@@ -189,6 +205,10 @@ int main(void) {
 		if (currentCoord[0] != 0){
 			Robot_Move(currentCoord[0] - 1, currentCoord[1]);
 			currentCoord[0] = currentCoord[0] - 1;
+			if (allPoints[getArrayAddressFromCoord(currentCoord)].visited==0){
+							if (Robot_Move(currentCoord[0], currentCoord[1]) == ROBOT_TOKENFOUND){
+											token++;
+										}}
 			visitPoint();
 		}
 	}
@@ -209,12 +229,15 @@ int main(void) {
 	void useNewPath(short pointToVisit){
 		printf("Starte useNewPath! Zu (%i,%i) über die Kante %i \n\n" , allPoints[pointToVisit].coord[0], allPoints[pointToVisit].coord[1], allPoints[pointToVisit].edgeToPointBefore);
 		short coords[2];
+
 		switch(allPoints[pointToVisit].edgeToPointBefore){
 		case 0: coords[0] = allPoints[pointToVisit].coord[0]; coords[1] = allPoints[pointToVisit].coord[1] - 1; useNewPath( getArrayAddressFromCoord(coords)); moveNorth(); break;
 		case 1: coords[0] = allPoints[pointToVisit].coord[0] - 1; coords[1] = allPoints[pointToVisit].coord[1]; useNewPath( getArrayAddressFromCoord(coords)); moveEast(); break;
 		case 2: coords[0] = allPoints[pointToVisit].coord[0]; coords[1] = allPoints[pointToVisit].coord[1] + 1; useNewPath( getArrayAddressFromCoord(coords)); moveSouth(); break;
 		case 3: coords[0] = allPoints[pointToVisit].coord[0] + 1; coords[1] = allPoints[pointToVisit].coord[1]; useNewPath( getArrayAddressFromCoord(coords)); moveWest(); break;
 		case -1: break;
+
+
 		}
 	}
 
@@ -359,10 +382,12 @@ int main(void) {
 
 	setNull();printStatusPoints();
 
-	short ever = 0;
-	while(ever < 48){
+
+
+	while(token < 3){
+
 		useNewPath(getNextPoint());
-		ever++;
+
 	}
 	useNewPath(goHome());
 	//printf("\n\n Zielpunkt:(%i,%i) Erster Rücksprung:%i",allPoints[getNextPoint()].coord[0], allPoints[getNextPoint()].coord[1], allPoints[getNextPoint()].edgeToPointBefore );
